@@ -8,214 +8,322 @@
 <meta property="og:title" content="Padel Guy | Padel sourcing from China">
 <meta property="og:description" content="Private-label overgrips, bags and rackets for small padel brands. Sourced and checked on the ground in China.">
 <meta property="og:url" content="https://padelguy.net">
-<meta name="theme-color" content="#2C68DB">
+<meta property="og:image" content="https://padelguy.net/eddy.jpg">
+<meta name="theme-color" content="#1a1714">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Courier+Prime:wght@400;700&family=Permanent+Marker&family=VT323&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0d0d0c; --ink:#f1ede4; --muted:#a19d94; --line:#2a2a28;
-    --blue:#2C68DB; --ball:#d7f24a; --card:#161615;
+    --paper:#ece4d2; --paper2:#e3d9c3; --ink:#1a1714; --muted:#5e564b;
+    --film:#141210; --orange:#ec5b24; --yellow:#f3c234; --blue:#2C68DB; --red:#d8342b;
+    --stamp:#ff7a1a;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px;overflow-x:hidden}
-  /* film grain */
-  body::before{content:"";position:fixed;inset:-50%;pointer-events:none;z-index:100;opacity:.09;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    animation:grain 1.2s steps(6) infinite}
-  @keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}100%{transform:translate(1%,3%)}}
-  @media (prefers-reduced-motion:reduce){body::before{animation:none}}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:17px;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:1240px;margin:0 auto;padding:0 24px}
-  .mono{font-family:"Space Mono",monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
-  .display{font-family:Anton,Impact,sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:.01em;font-weight:400}
+  img{display:block;max-width:100%}
 
-  header{position:sticky;top:0;z-index:20;background:var(--blue)}
-  nav{display:flex;align-items:center;justify-content:space-between;height:60px}
-  .logo{font-family:Anton,sans-serif;font-size:24px;letter-spacing:.03em;text-transform:uppercase;color:#fff}
-  .logo i{display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--ball);margin-right:9px;vertical-align:1px}
-  nav ul{display:flex;gap:30px;list-style:none}
-  nav ul a{color:#fff;opacity:.85}
-  nav ul a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+  /* ---------- analog overlays ---------- */
+  .grain{position:fixed;inset:-50%;pointer-events:none;z-index:200;opacity:.14;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    animation:grain 1s steps(5) infinite}
+  @keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-4%,3%)}40%{transform:translate(3%,-2%)}60%{transform:translate(-2%,-4%)}80%{transform:translate(4%,2%)}100%{transform:translate(0,0)}}
+  .vignette{position:fixed;inset:0;pointer-events:none;z-index:199;box-shadow:inset 0 0 180px rgba(60,35,10,.28)}
+  @media (prefers-reduced-motion:reduce){.grain,.marquee .track,.rec i{animation:none!important}}
 
-  .hero{border-bottom:1px solid var(--line)}
-  .hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;padding-top:64px;padding-bottom:64px;align-items:end}
-  .hero h1{font-size:clamp(64px,10vw,150px)}
-  .hero h1 span{color:var(--ball)}
-  .hero .sub{max-width:520px;color:var(--muted);font-size:19px;margin:28px 0 32px}
-  .portrait{position:relative;aspect-ratio:4/5;background:#222 center/cover no-repeat;border:1px solid var(--line);filter:contrast(1.05) saturate(.9)}
-  .portrait img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(.15)}
-  .portrait .cap{position:absolute;left:12px;bottom:12px;background:var(--bg);padding:4px 8px}
-  .btn{display:inline-block;font-family:"Space Mono",monospace;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:14px 22px;border:1.5px solid var(--ink);transition:.15s}
-  .btn.fill{background:var(--ball);color:#111;border-color:var(--ball)}
-  .btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--blue)}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  .mono{font-family:"Courier Prime",monospace;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+  .vhs{font-family:VT323,monospace;letter-spacing:.04em}
+  .marker{font-family:"Permanent Marker",cursive;font-weight:400}
+  .display{font-family:Anton,Impact,sans-serif;text-transform:uppercase;line-height:.9;font-weight:400;letter-spacing:.005em}
+  .ca{text-shadow:2px 0 rgba(216,52,43,.55),-2px 0 rgba(44,104,219,.45)}
 
-  .marquee{background:var(--ball);color:#111;overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--line)}
-  .marquee div{display:inline-block;padding:12px 0;animation:mq 30s linear infinite}
-  .marquee span{font-family:Anton,sans-serif;font-size:22px;text-transform:uppercase;margin:0 22px}
+  /* ---------- header ---------- */
+  header{position:sticky;top:0;z-index:50;background:var(--ink);color:var(--paper)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .logo{display:flex;align-items:center;gap:10px;font-family:Anton,sans-serif;font-size:24px;text-transform:uppercase;letter-spacing:.03em}
+  .logo .ball{width:16px;height:16px;border-radius:50%;background:var(--yellow);box-shadow:inset -3px -2px 0 rgba(0,0,0,.2)}
+  nav ul{display:flex;gap:28px;list-style:none}
+  nav ul a{opacity:.8}
+  nav ul a:hover{opacity:1;color:var(--yellow)}
+  .rec{display:flex;align-items:center;gap:8px;font-size:20px;color:var(--paper)}
+  .rec i{width:10px;height:10px;border-radius:50%;background:var(--red);animation:blink 1.2s steps(2) infinite}
+  @keyframes blink{50%{opacity:0}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;padding:56px 0 80px}
+  .hero::before{content:"";position:absolute;right:-180px;top:-160px;width:620px;height:620px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,110,40,.55),rgba(255,170,60,.25) 40%,transparent 70%);filter:blur(30px);pointer-events:none}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1.2fr .9fr;gap:48px;align-items:center}
+  .hero h1{font-size:clamp(66px,10.5vw,158px)}
+  .hero h1 .o{color:var(--orange)}
+  .hero .sub{font-size:19px;max-width:520px;color:var(--muted);margin:26px 0 30px}
+  .btn{display:inline-block;font-family:"Courier Prime",monospace;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:15px;padding:14px 22px;border:2px solid var(--ink);background:var(--paper);box-shadow:4px 4px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+  .btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+  .btn.hot{background:var(--orange);color:#fff}
+  .note{position:absolute;color:var(--blue);font-size:24px;transform:rotate(-6deg);white-space:nowrap}
+
+  /* film frame for portrait */
+  .filmframe{position:relative;background:var(--film);padding:34px 14px;transform:rotate(2deg);box-shadow:0 18px 40px rgba(40,20,0,.3)}
+  .filmframe::before,.filmframe::after{content:"";position:absolute;left:14px;right:14px;height:12px;
+    background:repeating-linear-gradient(90deg,var(--paper2) 0 14px,transparent 14px 30px);border-radius:2px;opacity:.9}
+  .filmframe::before{top:11px}.filmframe::after{bottom:11px}
+  .filmframe .edge{position:absolute;left:18px;bottom:-24px;color:var(--ink);font-size:16px;color:var(--stamp);opacity:.9}
+  .filmframe .edge.t{top:-24px;color:var(--ink);left:auto;right:18px}
+  .filmframe img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;filter:sepia(.18) contrast(1.06) saturate(1.05)}
+  .datestamp{position:absolute;right:26px;bottom:44px;font-family:VT323,monospace;font-size:30px;color:var(--stamp);text-shadow:0 0 6px rgba(255,120,30,.8)}
+  .tape{position:absolute;width:120px;height:32px;background:rgba(243,194,52,.75);top:-14px;left:40%;transform:rotate(-4deg);box-shadow:0 1px 2px rgba(0,0,0,.15)}
+
+  /* ---------- film-strip marquee ---------- */
+  .marquee{background:var(--film);color:var(--paper);overflow:hidden;position:relative;padding:18px 0}
+  .marquee::before,.marquee::after{content:"";position:absolute;left:0;right:0;height:8px;background:repeating-linear-gradient(90deg,var(--paper) 0 10px,transparent 10px 24px);opacity:.85}
+  .marquee::before{top:4px}.marquee::after{bottom:4px}
+  .marquee .track{display:inline-flex;white-space:nowrap;animation:mq 40s linear infinite}
+  .marquee span{font-family:Anton,sans-serif;font-size:26px;text-transform:uppercase;padding:0 18px}
+  .marquee b{font-family:VT323,monospace;font-weight:400;color:var(--stamp);font-size:22px;padding:0 6px;align-self:center}
   @keyframes mq{to{transform:translateX(-50%)}}
-  @media (prefers-reduced-motion:reduce){.marquee div{animation:none}}
 
-  section{padding:96px 0;border-bottom:1px solid var(--line)}
-  .head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
-  .head h2{font-size:clamp(48px,7vw,96px)}
-  .head p{max-width:420px;color:var(--muted)}
+  section{padding:100px 0;position:relative}
+  .kicker{display:inline-block;color:var(--orange);margin-bottom:12px}
+  h2.display{font-size:clamp(52px,7.5vw,104px)}
+  .lead{color:var(--muted);max-width:520px;font-size:18px}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:48px}
 
-  /* stacked banner cards */
-  .banner{display:block;position:relative;height:340px;margin-bottom:20px;overflow:hidden;border:1px solid var(--line)}
-  .banner .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}
-  .banner:hover .bg{transform:scale(1.03)}
-  .banner .in{position:absolute;inset:0;padding:28px;display:flex;flex-direction:column;justify-content:space-between}
-  .banner h3{font-size:clamp(56px,9vw,128px);color:#fff;mix-blend-mode:normal}
-  .banner .row{display:flex;justify-content:space-between;align-items:end;gap:20px}
-  .banner p{max-width:460px;color:rgba(255,255,255,.85);font-size:16px}
-  .b1 .bg{background:radial-gradient(circle at 80% 30%,#e8f55e 0 12%,transparent 13%),repeating-linear-gradient(115deg,#2C68DB 0 26px,#2559c0 26px 52px)}
-  .b2 .bg{background:linear-gradient(135deg,#1c1c1a,#33312c);}
-  .b2 .bg::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.04) 3px 4px)}
-  .b3 .bg{background:radial-gradient(ellipse at 70% 60%,#3a3a36 0 30%,transparent 31%),linear-gradient(160deg,#0f2a5c,#0d0d0c)}
+  /* ---------- VHS video ---------- */
+  .tv{background:var(--ink);color:var(--paper)}
+  .tv .grid{display:grid;grid-template-columns:auto 1fr;gap:64px;align-items:center}
+  .crt{position:relative;width:min(340px,80vw);aspect-ratio:9/16;background:#000;border-radius:18px;overflow:hidden;
+    box-shadow:0 0 0 10px #2a2622,0 0 0 12px #4a443d,0 30px 60px rgba(0,0,0,.5);cursor:pointer}
+  .crt img,.crt iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+  .crt img{filter:contrast(1.1) saturate(1.15) sepia(.12)}
+  .crt .scan{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 2px,transparent 2px 4px);mix-blend-mode:multiply}
+  .crt .glow{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 60px rgba(0,0,0,.8);border-radius:18px}
+  .crt .osd{position:absolute;left:16px;right:16px;font-family:VT323,monospace;font-size:24px;color:#fff;text-shadow:2px 0 rgba(216,52,43,.7),-2px 0 rgba(44,104,219,.7);display:flex;justify-content:space-between}
+  .crt .osd.top{top:14px}.crt .osd.bot{bottom:14px}
+  .crt .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:78px;height:78px;border-radius:50%;background:var(--orange);display:grid;place-items:center;box-shadow:0 0 0 6px rgba(236,91,36,.3)}
+  .crt .play::after{content:"";border-left:24px solid #fff;border-top:15px solid transparent;border-bottom:15px solid transparent;margin-left:6px}
+  .crt.on .scan,.crt.on .glow,.crt.on .osd,.crt.on .play{display:none}
+  .label{display:inline-block;background:var(--paper);color:var(--ink);padding:16px 20px 14px;transform:rotate(-2deg);border-top:10px solid var(--orange);box-shadow:4px 6px 0 rgba(0,0,0,.35);margin:6px 0 28px}
+  .label .marker{font-size:30px;line-height:1.1}
+  .label .mono{font-size:12px;color:var(--muted)}
+  .tv p{color:#bdb4a4;max-width:460px}
+  .tv .btn{background:transparent;color:var(--paper);border-color:var(--paper);box-shadow:4px 4px 0 var(--orange);margin-top:26px}
 
-  .pains{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
-  .pain{padding:30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:220px}
-  .pain .mono{color:var(--ball)}
-  .pain h3{font-family:Anton,sans-serif;text-transform:uppercase;font-weight:400;font-size:30px;line-height:1;margin:16px 0 10px}
-  .pain p{color:var(--muted);font-size:15px}
+  /* ---------- contact sheet products ---------- */
+  .sheet{background:var(--film);padding:44px 26px;position:relative;transform:rotate(-.6deg);box-shadow:0 20px 40px rgba(40,20,0,.25)}
+  .sheet::before,.sheet::after{content:"";position:absolute;left:26px;right:26px;height:12px;background:repeating-linear-gradient(90deg,var(--paper2) 0 14px,transparent 14px 30px)}
+  .sheet::before{top:14px}.sheet::after{bottom:14px}
+  .frames{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .frame{position:relative;background:#222;aspect-ratio:3/4;overflow:hidden;color:#fff}
+  .frame .art{position:absolute;inset:0}
+  .frame .num{position:absolute;top:-30px;left:4px;font-family:VT323,monospace;color:var(--stamp);font-size:20px}
+  .frame .cap{position:absolute;left:0;right:0;bottom:0;padding:18px;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+  .frame h3{font-size:clamp(40px,4.4vw,60px)}
+  .frame p{font-size:14px;color:#ddd;margin-top:6px}
+  .frame .tag{position:absolute;top:14px;right:14px;background:var(--yellow);color:var(--ink);padding:3px 8px;font-size:12px}
+  .f1 .art{background:radial-gradient(circle at 70% 30%,var(--yellow) 0 14%,transparent 15%),repeating-linear-gradient(135deg,#2C68DB 0 18px,#2459bd 18px 36px)}
+  .f2 .art{background:linear-gradient(160deg,#e8572a,#a8341a 70%)}
+  .f2 .art::after{content:"";position:absolute;left:18%;right:18%;top:20%;bottom:34%;border:3px dashed rgba(255,255,255,.55);border-radius:40px 40px 14px 14px}
+  .f3 .art{background:linear-gradient(#5b6a45,#3c4a2c)}
+  .f3 .art::before{content:"";position:absolute;left:24%;right:24%;top:10%;height:50%;border-radius:46% 46% 40% 40%;
+    background:radial-gradient(circle,#5b6a45 0 3px,transparent 4px) 0 0/16px 16px,#1d1c1a;box-shadow:inset 0 0 0 6px #e8572a}
+  .f3 .art::after{content:"";position:absolute;left:46%;width:8%;top:58%;height:24%;background:#1d1c1a;border-radius:0 0 6px 6px}
+  .frames .frame{transition:transform .3s}
+  .frames .frame:hover{transform:scale(1.02)}
 
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s;list-style:none}
-  .steps li{counter-increment:s}
-  .steps li::before{content:"0" counter(s);font-family:Anton,sans-serif;font-size:72px;line-height:1;color:var(--blue);display:block;margin-bottom:12px}
-  .steps h3{font-family:"Space Mono",monospace;text-transform:uppercase;font-size:16px;letter-spacing:.06em;margin-bottom:6px}
+  /* ---------- taped notes (pain points) ---------- */
+  .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+  .card{background:#fbf7ec;padding:30px 26px 26px;position:relative;box-shadow:0 2px 0 rgba(0,0,0,.06),0 10px 24px rgba(60,35,10,.12);
+    background-image:repeating-linear-gradient(transparent 0 31px,rgba(44,104,219,.12) 31px 32px)}
+  .card:nth-child(3n+1){transform:rotate(-1.4deg)} .card:nth-child(3n+2){transform:rotate(1deg)} .card:nth-child(3n){transform:rotate(-.5deg)}
+  .card::before{content:"";position:absolute;top:-12px;left:50%;width:90px;height:26px;margin-left:-45px;background:rgba(243,194,52,.7);transform:rotate(-3deg)}
+  .card .marker{color:var(--red);font-size:22px}
+  .card h3{font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:30px;line-height:1;margin:6px 0 10px}
+  .card p{color:var(--muted);font-size:15.5px}
+
+  /* ---------- process ---------- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink)}
+  .steps li{list-style:none;padding:26px 22px 10px 0;border-right:1px dashed rgba(26,23,20,.35);margin-right:22px}
+  .steps li:last-child{border:none}
+  .steps .vhs{font-size:56px;line-height:1;color:var(--orange)}
+  .steps h3{font-family:"Courier Prime",monospace;text-transform:uppercase;letter-spacing:.05em;font-size:18px;margin:8px 0 6px}
   .steps p{color:var(--muted);font-size:15px}
 
-  .about{display:grid;grid-template-columns:1fr 1fr;gap:56px}
-  .about p{font-size:20px;line-height:1.55;margin-bottom:18px}
-  .about p.m{color:var(--muted);font-size:17px}
-  .facts{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
-  .facts div{padding:22px 0;border-bottom:1px solid var(--line)}
-  .facts b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:48px;line-height:1}
+  /* ---------- about ---------- */
+  .about{background:var(--paper2)}
+  .about .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center}
+  .polaroid{background:#fbf8f0;padding:14px 14px 64px;box-shadow:0 14px 30px rgba(40,20,0,.25);transform:rotate(-3deg);position:relative;max-width:380px}
+  .polaroid img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;object-position:50% 30%;filter:sepia(.25) contrast(1.05) saturate(.9)}
+  .polaroid .marker{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-size:26px}
+  .about p.big{font-size:22px;line-height:1.5;margin-bottom:16px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px;border-top:2px solid var(--ink);padding-top:20px}
+  .stats b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:40px;line-height:1}
+  .stats span{font-size:12px}
 
-  .contact{background:var(--blue);border:none;text-align:center;padding:110px 0}
-  .contact h2{font-size:clamp(56px,10vw,150px);color:#fff}
-  .contact p{color:rgba(255,255,255,.85);max-width:540px;margin:22px auto 34px}
-  .contact .btn{border-color:#fff;color:#fff}
-  .contact .btn.fill{color:#111;border-color:var(--ball)}
+  /* ---------- contact ---------- */
+  .contact{background:var(--orange);color:#fff;text-align:center;overflow:hidden}
+  .contact h2{font-size:clamp(70px,13vw,190px);color:var(--paper)}
+  .contact p{max-width:540px;margin:20px auto 32px;font-size:18px;color:#fff3e8}
+  .contact .btn{background:var(--paper);color:var(--ink)}
+  .contact .note{position:static;display:block;color:var(--ink);transform:rotate(-3deg);margin-top:30px}
 
-  footer{padding:30px 0;color:var(--muted)}
-  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-  footer nav{height:auto;display:flex;gap:22px}
+  footer{background:var(--ink);color:#a59c8c;padding:26px 0}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+  footer .links{display:flex;gap:22px}
+  footer a:hover{color:var(--yellow)}
 
   @media (max-width:900px){
     .wrap{padding:0 16px}
     nav ul{display:none}
-    .hero .wrap{grid-template-columns:1fr;padding-top:40px}
-    .portrait{max-width:420px}
-    .pains,.steps,.about{grid-template-columns:1fr}
-    .steps{gap:36px}
-    .banner{height:300px}
-    .banner .row{flex-direction:column;align-items:flex-start}
-    section{padding:64px 0}
+    .hero .wrap,.tv .grid,.about .grid{grid-template-columns:1fr}
+    .hero{padding-top:36px}
+    .filmframe{max-width:400px;margin:20px auto 0}
+    .note.hn{display:none}
+    .frames,.notes{grid-template-columns:1fr}
+    .frame{aspect-ratio:4/3}
+    .steps{grid-template-columns:1fr 1fr;row-gap:20px}
+    .steps li{border-right:none;margin-right:0}
+    .stats{grid-template-columns:1fr 1fr}
+    .tv .grid{gap:40px;justify-items:center}
+    section{padding:72px 0}
+    .polaroid{margin:0 auto}
   }
 </style>
 </head>
 <body>
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
 
 <header>
   <nav class="wrap">
-    <a href="#" class="logo"><i></i>Padel Guy</a>
+    <a href="#" class="logo"><span class="ball"></span>Padel Guy</a>
     <ul class="mono">
+      <li><a href="#watch">Watch</a></li>
       <li><a href="#products">Products</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
+    <span class="rec vhs"><i></i>REC</span>
   </nav>
 </header>
 
-<section class="hero" style="padding:0">
+<section class="hero">
   <div class="wrap">
     <div>
-      <div class="mono" style="color:var(--ball)">● Xiamen, China — Padel supply chain</div>
-      <h1 class="display" style="margin-top:18px">Made in China.<br><span>Done right.</span></h1>
+      <span class="mono kicker">● Xiamen, China / Padel supply chain</span>
+      <h1 class="display ca">Made in<br>China.<br><span class="o">Done right.</span></h1>
       <p class="sub">I help small padel brands launch private-label overgrips, bags and rackets, with someone on the ground checking every batch.</p>
-      <a href="#contact" class="btn fill">Start a project</a>
-      <a href="#process" class="btn" style="margin-left:10px">How it works</a>
+      <a href="#contact" class="btn hot">Start a project</a>
+      <a href="#watch" class="btn" style="margin-left:12px">▶ Watch</a>
     </div>
-    <div class="portrait">
-      <img src="eddy.jpg" alt="Eddy, Padel Guy" width="800" height="1000">
-      <span class="cap mono">Eddy / Padel Guy</span>
+    <div style="position:relative">
+      <span class="note marker hn" style="left:10px;top:-34px">that's me →</span>
+      <div class="filmframe">
+        <span class="edge t vhs">PADEL 400 ▸ 24A</span>
+        <img src="eddy.jpg" alt="Eddy, Padel Guy" width="800" height="1000">
+        <span class="datestamp">'26 11 09</span>
+        <span class="edge vhs">▸ 24</span>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="marquee" aria-hidden="true"><div>
-  <span>Overgrips</span>●<span>Bags</span>●<span>Racket covers</span>●<span>Rackets</span>●<span>Low MOQ</span>●<span>QC on the ground</span>●<span>Landed cost</span>●
-  <span>Overgrips</span>●<span>Bags</span>●<span>Racket covers</span>●<span>Rackets</span>●<span>Low MOQ</span>●<span>QC on the ground</span>●<span>Landed cost</span>●
+<div class="marquee" aria-hidden="true"><div class="track">
+  <span>Overgrips</span><b>▸12A</b><span>Bags</span><b>▸13</b><span>Racket covers</span><b>▸13A</b><span>Rackets</span><b>▸14</b><span>Low MOQ</span><b>▸14A</b><span>QC on the ground</span><b>▸15</b><span>Landed cost</span><b>▸15A</b>
+  <span>Overgrips</span><b>▸12A</b><span>Bags</span><b>▸13</b><span>Racket covers</span><b>▸13A</b><span>Rackets</span><b>▸14</b><span>Low MOQ</span><b>▸14A</b><span>QC on the ground</span><b>▸15</b><span>Landed cost</span><b>▸15A</b>
 </div></div>
+
+<section class="tv" id="watch">
+  <div class="wrap grid">
+    <div class="crt" id="crt" data-yt="7BvV35pxL2I" role="button" tabindex="0" aria-label="Play video">
+      <img id="thumb" alt="" src="">
+      <div class="scan"></div><div class="glow"></div>
+      <div class="osd top"><span>PLAY ▶</span><span>SP</span></div>
+      <div class="osd bot"><span>CH 03</span><span>0:00:00</span></div>
+      <div class="play"></div>
+    </div>
+    <div>
+      <span class="mono kicker">Now playing</span>
+      <h2 class="display" style="color:var(--paper)">From the<br>factory floor</h2>
+      <div class="label">
+        <div class="mono">Tape 01 / Shorts</div>
+        <div class="marker">3 mistakes every new padel brand makes</div>
+      </div>
+      <p>Short, honest videos about how padel gear is really made, priced and shipped. No fluff, no sponsored factories.</p>
+      <a href="https://www.youtube.com/shorts/7BvV35pxL2I" id="ytlink" class="btn" target="_blank" rel="noopener">More on YouTube ↗</a>
+    </div>
+  </div>
+</section>
 
 <section id="products">
   <div class="wrap">
     <div class="head">
-      <h2 class="display">What I source</h2>
-      <p>Starting with the products small brands sell most and reorder often.</p>
+      <div><span class="mono kicker">Contact sheet</span><h2 class="display">What I source</h2></div>
+      <p class="lead">Starting with the products small brands sell most and reorder often.</p>
     </div>
-    <a href="#contact" class="banner b1"><div class="bg"></div><div class="in">
-      <span class="mono" style="color:#fff">01 / Core</span>
-      <div class="row"><h3 class="display">Overgrips</h3><p>PU and textured overgrips in your colours, with custom tubes, boxes and multi-packs. Realistic first-order quantities.</p></div>
-    </div></a>
-    <a href="#contact" class="banner b2"><div class="bg"></div><div class="in">
-      <span class="mono" style="color:#fff">02 / Core</span>
-      <div class="row"><h3 class="display">Bags & covers</h3><p>Racket bags, backpacks and covers with your logo. A strong add-on for clubs, academies and coaches.</p></div>
-    </div></a>
-    <a href="#contact" class="banner b3"><div class="bg"></div><div class="in">
-      <span class="mono" style="color:#fff">03 / On request</span>
-      <div class="row"><h3 class="display">Rackets</h3><p>Carbon and fibreglass private-label rackets, from mould selection to cosmetics and sampling.</p></div>
-    </div></a>
+    <div class="sheet">
+      <div class="frames">
+        <a href="#contact" class="frame f1"><span class="num">▸ 01</span><div class="art"></div><span class="tag mono">Core</span>
+          <div class="cap"><h3 class="display">Overgrips</h3><p>PU and textured overgrips in your colours, with custom tubes, boxes and multi-packs.</p></div></a>
+        <a href="#contact" class="frame f2"><span class="num">▸ 02</span><div class="art"></div><span class="tag mono">Core</span>
+          <div class="cap"><h3 class="display">Bags & covers</h3><p>Racket bags, backpacks and covers with your logo. Great for clubs and coaches.</p></div></a>
+        <a href="#contact" class="frame f3"><span class="num">▸ 03</span><div class="art"></div><span class="tag mono">On request</span>
+          <div class="cap"><h3 class="display">Rackets</h3><p>Carbon and fibreglass private-label rackets, from mould to cosmetics and samples.</p></div></a>
+      </div>
+    </div>
   </div>
 </section>
 
-<section>
+<section style="background:var(--paper2)">
   <div class="wrap">
     <div class="head">
-      <h2 class="display">Built for<br>small brands</h2>
-      <p>Most factories are set up for big orders. If you run a 1 to 3 person brand, these are the problems that cost you time and money.</p>
+      <div><span class="mono kicker">Field notes</span><h2 class="display">Built for<br>small brands</h2></div>
+      <p class="lead">Most factories are set up for big orders. If you run a 1 to 3 person brand, these are the problems that cost you time and money.</p>
     </div>
-    <div class="pains">
-      <div class="pain"><span class="mono">Problem 01</span><h3>MOQs that don't fit</h3><p>Factories open to realistic first runs, and a path to scale.</p></div>
-      <div class="pain"><span class="mono">Problem 02</span><h3>Sample ≠ bulk</h3><p>Golden samples, written specs and pre-shipment checks so batch 3 matches batch 1.</p></div>
-      <div class="pain"><span class="mono">Problem 03</span><h3>Hidden landed cost</h3><p>Unit price, packaging, freight and duties broken down before you commit.</p></div>
-      <div class="pain"><span class="mono">Problem 04</span><h3>No backup supplier</h3><p>A second qualified source so a holiday shutdown or bad batch doesn't stop sales.</p></div>
-      <div class="pain"><span class="mono">Problem 05</span><h3>Packaging</h3><p>Custom boxes, tubes, labels and inserts, sourced and checked with the product.</p></div>
-      <div class="pain"><span class="mono">Problem 06</span><h3>EU compliance</h3><p>Material documents and labelling sorted early, not after the goods arrive.</p></div>
+    <div class="notes">
+      <div class="card"><span class="marker">#1</span><h3>MOQs that don't fit</h3><p>Factories open to realistic first runs, and a path to scale.</p></div>
+      <div class="card"><span class="marker">#2</span><h3>Sample ≠ bulk</h3><p>Golden samples, written specs and pre-shipment checks so batch 3 matches batch 1.</p></div>
+      <div class="card"><span class="marker">#3</span><h3>Hidden landed cost</h3><p>Unit price, packaging, freight and duties broken down before you commit.</p></div>
+      <div class="card"><span class="marker">#4</span><h3>No backup supplier</h3><p>A second qualified source so a holiday shutdown or bad batch doesn't stop sales.</p></div>
+      <div class="card"><span class="marker">#5</span><h3>Packaging</h3><p>Custom boxes, tubes, labels and inserts, sourced and checked with the product.</p></div>
+      <div class="card"><span class="marker">#6</span><h3>EU compliance</h3><p>Material documents and labelling sorted early, not after the goods arrive.</p></div>
     </div>
   </div>
 </section>
 
 <section id="process">
   <div class="wrap">
-    <div class="head"><h2 class="display">How it works</h2><p>Transparent, and you stay in control of every decision.</p></div>
+    <div class="head">
+      <div><span class="mono kicker">Rewind ◀◀</span><h2 class="display">How it works</h2></div>
+      <p class="lead">Transparent, and you stay in control of every decision.</p>
+    </div>
     <ol class="steps">
-      <li><h3>Brief</h3><p>Your product, target price range, quantities and timeline.</p></li>
-      <li><h3>Samples</h3><p>I shortlist factories and send comparable samples with honest notes.</p></li>
-      <li><h3>Production & QC</h3><p>I follow production and check goods before they leave the factory.</p></li>
-      <li><h3>Shipping</h3><p>Door-to-door freight options with a clear landed-cost estimate.</p></li>
+      <li><span class="vhs">00:01</span><h3>Brief</h3><p>Your product, target price range, quantities and timeline.</p></li>
+      <li><span class="vhs">00:02</span><h3>Samples</h3><p>I shortlist factories and send comparable samples with honest notes.</p></li>
+      <li><span class="vhs">00:03</span><h3>Production & QC</h3><p>I follow production and check goods before they leave the factory.</p></li>
+      <li><span class="vhs">00:04</span><h3>Shipping</h3><p>Door-to-door freight options with a clear landed-cost estimate.</p></li>
     </ol>
   </div>
 </section>
 
-<section id="about">
-  <div class="wrap about">
-    <div>
-      <span class="mono" style="color:var(--ball)">About</span>
-      <h2 class="display" style="font-size:clamp(56px,8vw,110px);margin-top:12px">Hi, I'm Eddy.</h2>
+<section class="about" id="about">
+  <div class="wrap grid">
+    <div class="polaroid">
+      <img src="eddy.jpg" alt="Eddy" loading="lazy">
+      <span class="marker">Eddy, Xiamen '26</span>
     </div>
     <div>
-      <p>I've spent 11 years in China's export trade, working with factories, QC and international shipping every day.</p>
-      <p class="m">Now I focus on padel, one of the fastest-growing sports in Europe, and on helping small brands get the factory side right. I share what I learn on TikTok, Instagram and YouTube.</p>
-      <div class="facts">
+      <span class="mono kicker">About</span>
+      <h2 class="display ca" style="margin-bottom:22px">Hi, I'm Eddy.</h2>
+      <p class="big">I've spent 11 years in China's export trade, working with factories, QC and international shipping every day.</p>
+      <p class="lead" style="max-width:none">Now I focus on padel, one of the fastest-growing sports in Europe, and on helping small brands get the factory side right. I share what I learn on YouTube, TikTok and Instagram.</p>
+      <div class="stats">
         <div><b>11</b><span class="mono">Years in export</span></div>
-        <div><b>EN / 中文</b><span class="mono">Nothing lost in translation</span></div>
-        <div><b>Xiamen</b><span class="mono">Racket-sport hub</span></div>
-        <div><b>1:1</b><span class="mono">You talk to me directly</span></div>
+        <div><b>EN/中</b><span class="mono">Bilingual</span></div>
+        <div><b>XMN</b><span class="mono">Racket-sport hub</span></div>
+        <div><b>1:1</b><span class="mono">Talk to me directly</span></div>
       </div>
     </div>
   </div>
@@ -225,16 +333,34 @@
   <div class="wrap">
     <h2 class="display">Let's talk.</h2>
     <p>Send a short note about your product and quantities. I reply personally, usually within one working day.</p>
-    <a href="mailto:eddy@padelguy.net?subject=Sourcing%20enquiry" class="btn fill">eddy@padelguy.net</a>
+    <a href="mailto:eddy@padelguy.net?subject=Sourcing%20enquiry" class="btn">eddy@padelguy.net</a>
+    <span class="note marker">no bots, just me :)</span>
   </div>
 </section>
 
 <footer class="mono">
   <div class="wrap">
     <span>© Padel Guy 2026</span>
-    <nav><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">YouTube</a><a href="mailto:eddy@padelguy.net">Mail</a></nav>
+    <div class="links"><a href="https://www.youtube.com/shorts/7BvV35pxL2I" id="ytfoot" target="_blank" rel="noopener">YouTube</a><a href="#">Instagram</a><a href="#">TikTok</a><a href="mailto:eddy@padelguy.net">Mail</a></div>
   </div>
 </footer>
 
+<script>
+(function(){
+  var crt=document.getElementById('crt'), id=crt.getAttribute('data-yt'), th=document.getElementById('thumb');
+  if(!id){crt.style.background='linear-gradient(160deg,#3a2a1f,#0d0b0a)';th.remove();return;}
+  th.src='https://i.ytimg.com/vi/'+id+'/oar2.jpg';
+  th.onerror=function(){th.onerror=null;th.src='https://i.ytimg.com/vi/'+id+'/hqdefault.jpg';};
+  function play(){
+    if(crt.classList.contains('on'))return;
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&playsinline=1&rel=0';
+    f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.title='Padel Guy video';
+    crt.appendChild(f);crt.classList.add('on');
+  }
+  crt.addEventListener('click',play);
+  crt.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();play();}});
+})();
+</script>
 </body>
 </html>
